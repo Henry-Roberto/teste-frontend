@@ -1,0 +1,30 @@
+<div class="container-dev-cards">
+  <mat-spinner *ngIf="isLoadingDevs" class="loading" [diameter]="50" [mode]="'indeterminate'"></mat-spinner>
+
+  <ng-container *ngIf="!isLoadingDevs">
+    <div class="dev-card" *ngFor="let dev of devs" [class.dev-card-selected]="dev._id === devSelected?._id">
+      <img class="avatar" [src]="dev.avatarUrl || '/assets/images/image-not-available.svg'" alt="">
+      <p class="g-limit-line">{{ dev.name }}</p>
+      <p class="g-limit-line">{{ dev.city }}</p>
+      <p class="g-limit-line" [title]="dev.technologies">{{ dev.technologies }}</p>
+
+      <div class="container-buttons">
+        <a class="github-button" [href]="dev.githubUser ? 'https://github.com/' + dev.githubUser : '#'"
+          [ngClass]="!dev.githubUser ? 'link-disabled' : ''" target="_blank">
+          Acessar GitHub
+        </a>
+        <div *ngIf="idDevInProcess === dev._id">
+          <mat-spinner [diameter]="20" [mode]="'indeterminate'"></mat-spinner>
+        </div>
+        <div *ngIf="idDevInProcess !== dev._id">
+          <button (click)="editDev(dev._id)">
+            <img src="/assets/images/icons/edit-icon.svg" alt="Edit">
+          </button>
+          <button (click)="deleteDev(dev._id)">
+            <img src="/assets/images/icons/trash-icon.svg" alt="Edit">
+          </button>
+        </div>
+      </div>
+    </div>
+  </ng-container>
+</div>

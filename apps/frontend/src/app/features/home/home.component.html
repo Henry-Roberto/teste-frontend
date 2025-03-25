@@ -1,0 +1,6 @@
+<app-header (searchChanged)="onSearchChanged($event)"></app-header>
+<main>
+  <app-dev-form [dev]="devSelected" (devCreated)="onDevCreated()"></app-dev-form>
+  <app-dev-list [filters]="filters" [devSelected]="devSelected"
+    (devSelectedChanged)="onDevSelectedChange($event)"></app-dev-list>
+</main>

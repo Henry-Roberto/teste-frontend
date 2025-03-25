@@ -1,0 +1,72 @@
+<div class="container">
+  <form [formGroup]="devForm" (ngSubmit)="saveOrUpdate()">
+    <button [disabled]="loginGithubIsLoading" class="github-button" type="button" (click)="loginGithub()">
+      <ng-container *ngIf="!loginGithubIsLoading">
+        <img src="/assets/images/logos/github-logo.svg" alt="">
+        Cadastrar com GitHub
+      </ng-container>
+      <mat-spinner *ngIf="loginGithubIsLoading" [diameter]="20" [mode]="'indeterminate'"></mat-spinner>
+    </button>
+
+    <div class="container-input">
+      <label for="githubUser">Usuário GitHub</label>
+      <input id="githubUser" formControlName="githubUser">
+    </div>
+
+    <hr class="separation-line">
+
+    <div class="container-input">
+      <label for="avatarUrl">Avatar URL</label>
+      <input id="avatarUrl" formControlName="avatarUrl">
+    </div>
+
+    <div class="container-input">
+      <label for="name">Nome</label>
+      <input id="name" formControlName="name">
+      <div class="error" *ngIf="devForm.get('name')?.invalid && devForm.get('name')?.touched">
+        O nome deve ter pelo menos 3 caracteres.
+      </div>
+    </div>
+
+    <div class="container-input">
+      <label for="email">E-mail</label>
+      <input id="email" type="email" formControlName="email">
+      <div class="error" *ngIf="devForm.get('email')?.invalid && devForm.get('email')?.touched">
+        Insira um e-mail válido.
+      </div>
+    </div>
+
+    <div class="container-input">
+      <label for="city">Cidade</label>
+      <input id="city" formControlName="city">
+    </div>
+
+    <hr class="separation-line">
+
+    <h3>PROFISSIONAL</h3>
+
+    <div class="container-input">
+      <label for="training">Formação</label>
+      <input id="training" formControlName="training">
+    </div>
+
+    <div class="container-input">
+      <label for="technologies">Tecnologias</label>
+      <textarea id="technologies" formControlName="technologies" placeholder="Ex: HTML/CSS, Vue, Angular etc.">
+      </textarea>
+    </div>
+
+    <div class="container-save-cancel" style="display: flex;">
+      <button class="cancel-button" (click)="cancel()" [disabled]="saveOrUpdateIsLoading" *ngIf="dev._id" type="button">
+        Cancelar
+      </button>
+      <button class="register-button" type="submit" [disabled]="devForm.invalid || saveOrUpdateIsLoading">
+        <ng-container *ngIf="!saveOrUpdateIsLoading">
+          {{ dev._id ? 'Atualizar' : 'Cadastrar' }}
+        </ng-container>
+
+        <mat-spinner *ngIf="saveOrUpdateIsLoading" [diameter]="20" [mode]="'indeterminate'"></mat-spinner>
+      </button>
+    </div>
+  </form>
+</div>

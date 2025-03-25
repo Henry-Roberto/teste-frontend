@@ -1,0 +1,17 @@
+{
+  "name": "dev-crud",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start:frontend": "cd apps/frontend && npm start",
+    "start:backend": "cd apps/backend/dist && node --watch app.js",
+    "compile:backend": "cd apps/backend && tsc",
+    "build:frontend": "cd apps/frontend && ng build",
+    "build:backend": "cd apps/backend && npm run build",
+    "test:frontend": "cd apps/frontend && ng test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

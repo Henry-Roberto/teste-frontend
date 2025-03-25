@@ -1,0 +1,133 @@
+@import "src/styles/variables";
+
+.container {
+  max-width: 400px;
+  height: 833px;
+  margin: auto;
+  padding: 32px;
+  border: 1px solid #cbd5e0;
+  border-radius: 5px;
+  background: $color-background;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.container-input {
+  position: relative;
+
+  label {
+    display: block;
+    font: $font-primary-bold;
+    color: $color-text-primary;
+    font-size: 12px;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0 14px 0;
+    border: 2px solid #a0aec0;
+    border-radius: 3px;
+    font: $font-primary-normal;
+    color: $color-text-primary;
+    font-size: 14px;
+    &:focus {
+      outline: none;
+      border: 2px solid #3dbd79;
+    }
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  .error {
+    font: $font-primary-normal;
+    color: red;
+    font-size: 10px;
+    margin-top: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+  }
+}
+
+#technologies {
+  height: 90px;
+}
+
+#githubUser {
+  background-color: #cfd8e3;
+  border-color: #a0aec0;
+  margin-bottom: 0;
+}
+
+h3 {
+  font: $font-primary-bold;
+  font-size: 16px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+button {
+  padding: 10px;
+  width: 100%;
+  height: 42px;
+  font: $font-primary-bold;
+  border-radius: 3px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &:focus {
+    filter: brightness(1.1);
+  }
+}
+
+.github-button {
+  margin-bottom: 14px;
+  border: 2px solid #4a5568;
+  background-color: $color-background;
+  font-size: 14px;
+  gap: 4px;
+  img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.container-save-cancel {
+  display: flex;
+  gap: 12px;
+}
+
+.register-button,
+.cancel-button {
+  margin-top: 15px;
+  font-size: 16px;
+
+  &:disabled {
+    opacity: 0.8;
+    cursor: not-allowed;
+  }
+}
+
+.register-button {
+  background: $color-background-button;
+  color: #22543d;
+  border: 1px solid #38a169;
+}
+
+.cancel-button {
+  background: #a51d2a;
+  color: #570e15;
+  border: 1px solid #c92030;
+}
+
+.separation-line {
+  width: 336px;
+  margin: 24px auto;
+  opacity: 0.3;
+}

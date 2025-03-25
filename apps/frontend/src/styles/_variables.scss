@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+
+// Cores principais do tema
+$color-primary: #1a202c;
+$color-background: #ffffff;
+$color-card-background: $color-primary;
+$color-text-primary: #2d3748;
+$color-text-secondary: #ffffff;
+$color-background-button: #38a169;
+
+$color-highlight: #167abc;
+$color-hover-button: #5dafff;
+$height-header: 100px;
+$height-pagination: 92px;
+$min-width-web: 667px;
+// Fontes
+$font-primary-normal: normal normal 400 12px/14px "Roboto";
+$font-primary-bold: normal normal 500 12px/14px "Roboto";
+$search-icon: url("/assets/icons/search-icon.svg");

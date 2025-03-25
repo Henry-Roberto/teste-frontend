@@ -1,0 +1,13 @@
+@import "src/styles/variables"; // Use o caminho correto
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $color-text-primary;
+}
+
+.g-limit-line {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
